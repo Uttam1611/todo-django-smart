@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Todo</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 30px auto; }
+        a { text-decoration: none; margin-right: 10px; }
+        .todo { border-bottom: 1px solid #ccc; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Smart Todo App</h1>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }} | <a href="{% url 'logout' %}">Logout</a></p>
+    {% endif %}
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

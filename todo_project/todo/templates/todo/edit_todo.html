@@ -1,0 +1,17 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<h2>Edit Todo</h2>
+<form method="post">
+    {% csrf_token %}
+    <p>Title: <input type="text" name="title" value="{{ todo.title }}" required></p>
+    <p>Description: <textarea name="description">{{ todo.description }}</textarea></p>
+    <p>Status:
+        <select name="status">
+            <option value="todo" {% if todo.status == 'todo' %}selected{% endif %}>To Do</option>
+            <option value="working" {% if todo.status == 'working' %}selected{% endif %}>Working</option>
+            <option value="done" {% if todo.status == 'done' %}selected{% endif %}>Done</option>
+        </select>
+    </p>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

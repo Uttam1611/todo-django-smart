@@ -1,0 +1,15 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+    <a href="{% url 'add_todo' %}">Add New Todo</a>
+    {% for todo in todos %}
+        <div class="todo">
+            <strong>{{ todo.title }}</strong> ({{ todo.status }})<br>
+            {{ todo.description }}<br>
+            <a href="{% url 'edit_todo' todo.pk %}">Edit</a>
+            <a href="{% url 'delete_todo' todo.pk %}">Delete</a>
+        </div>
+    {% empty %}
+        <p>No tasks yet!</p>
+    {% endfor %}
+{% endblock %}
