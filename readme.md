@@ -1,5 +1,5 @@
-README.md <<EOF
-# todo_project
+README.md
+# Todo project
 
 A full-featured Django-based To-Do List application that enables **user-specific task management** with secure login/logout functionality. Users can **create, update, delete**, and **organize** their todos under categories like \`To Do\`, \`Working\`, and \`Done\`.
 
