@@ -74,10 +74,15 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# NOTE: for postgresql if you wanna go with default just go to previous commit of this project  
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Add_your_DBname',
+        'USER': 'Add_your_DBusername',
+        'PASSWORD': 'Add_your_DBpass',
+        'HOST': 'localhost',
+        'PORT': 'Add_your_DBportno',
     }
 }
 
